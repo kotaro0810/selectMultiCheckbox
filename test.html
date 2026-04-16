@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>selectMultiCheckbox テストページ</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 760px;
+      margin: 24px auto;
+      padding: 0 16px;
+    }
+    .checkbox-group {
+      border: 1px solid #ccc;
+      padding: 16px;
+      border-radius: 8px;
+      background: #fafafa;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>selectMultiCheckbox テストページ</h1>
+  <p>このページはブックマークレットの動作確認用です。ページ内のチェックボックスを選択範囲でまとめてチェックできます。</p>
+
+  <div class="checkbox-group">
+    <h2>チェックボックス一覧</h2>
+    <label><input type="checkbox" /> チェック項目 1</label>
+    <label><input type="checkbox" /> チェック項目 2</label>
+    <label><input type="checkbox" /> チェック項目 3</label>
+    <label><input type="checkbox" /> チェック項目 4</label>
+    <label><input type="checkbox" /> チェック項目 5</label>
+    <label><input type="checkbox" /> チェック項目 6</label>
+  </div>
+
+  <p>使い方：</p>
+  <ol>
+    <li>このページでチェックしたい項目をドラッグして選択します。</li>
+    <li>ブックマークバーに保存した `selectMultiCheckbox` ブックマークレットをクリックします。</li>
+    <li>選択範囲内のチェックボックスがすべてオンになります。</li>
+  </ol>
+
+  <p>※ ブラウザのブックマークレットが動作するように、JavaScriptを有効にしてください。</p>
+</body>
+</html>

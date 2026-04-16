@@ -1,0 +1,1 @@
+javascript:(function(){const s=window.getSelection();if(!s.rangeCount)return;const r=s.getRangeAt(0);document.querySelectorAll('input[type="checkbox"]').forEach(cb=>{if(r.intersectsNode(cb)){if(!cb.checked){cb.checked=true;cb.dispatchEvent(new Event('change',{bubbles:true}));}}});})();
