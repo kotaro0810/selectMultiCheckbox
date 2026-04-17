@@ -18,14 +18,12 @@
     // 現在のチェックボックスが選択範囲に含まれているかを判定します。
     // intersectsNode は、指定した要素が範囲と交差しているかどうかを調べるメソッドです。
     if (range.intersectsNode(cb)) {
-      // チェックボックスがまだチェックされていない場合だけチェックを付けます。
-      if (!cb.checked) {
-        cb.checked = true; // チェックボックスをONにします。
+      // チェックボックスのチェック状態をトグル（反転）します。
+      cb.checked = !cb.checked;
 
-        // change イベントを手動で発生させます。
-        // これにより、チェック状態の変更を監視している他のコード（onchange など）も反応します。
-        cb.dispatchEvent(new Event('change', { bubbles: true }));
-      }
+      // change イベントを手動で発生させます。
+      // これにより、チェック状態の変更を監視している他のコード（onchange など）も反応します。
+      cb.dispatchEvent(new Event('change', { bubbles: true }));
     }
   });
 })();
