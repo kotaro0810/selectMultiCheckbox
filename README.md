@@ -1,11 +1,11 @@
 # selectMultiCheckbox
 
-`selectMultiCheckbox` は、Webページ上で選択した範囲内にあるチェックボックスをまとめてオンにできるブックマークレットです。
+`selectMultiCheckbox` は、Webページ上で選択した範囲内にあるチェックボックスのチェック状態をトグルできるブックマークレットです。
 
 ## できること
 
 - テキストや要素をドラッグして選択した範囲内のチェックボックスを探す
-- 選択範囲に含まれるチェックボックスをすべてチェックする
+- 選択範囲に含まれるチェックボックスのチェック状態をすべてトグル（反転）する
 - `change` イベントが発生するので、ページ側の挙動にも対応しやすい
 
 ## 使い方（初心者向け）
@@ -17,7 +17,7 @@
 3. URL（またはロケーション）には、次のコードをコピーして貼り付けます。
 
 ```javascript
-javascript:(function(){const s=window.getSelection();if(!s.rangeCount)return;const r=s.getRangeAt(0);document.querySelectorAll('input[type="checkbox"]').forEach(cb=>{if(r.intersectsNode(cb)){if(!cb.checked){cb.checked=true;cb.dispatchEvent(new Event('change',{bubbles:true}));}}});})();
+javascript:(function(){const s=window.getSelection();if(!s.rangeCount)return;const r=s.getRangeAt(0);document.querySelectorAll('input[type="checkbox"]').forEach(cb=>{if(r.intersectsNode(cb)){cb.checked=!cb.checked;cb.dispatchEvent(new Event('change',{bubbles:true}));}});})();
 ```
 
 > ブックマークレットとは、ブックマークに保存した小さな JavaScript コードを実行する仕組みです。
@@ -31,7 +31,7 @@ javascript:(function(){const s=window.getSelection();if(!s.rangeCount)return;con
 ### 3. ブックマークレットを実行する
 
 1. 先ほど作成した `複数チェックボックス選択` ブックマークをクリックします。
-2. 選択範囲内にあるチェックボックスが自動でオンになります。
+2. 選択範囲内にあるチェックボックスのチェック状態がトグル（反転）されます。
 3. ページに `onchange` や `change` イベントが登録されている場合は、その処理も起動します。
 
 ## 使い方の例
